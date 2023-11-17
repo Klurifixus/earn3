@@ -1,26 +1,72 @@
-<!-- FILEPATH: /c:/Users/pirre/OneDrive/Skrivbord/Repos/earn3/django_project/earn_project/templates/base.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
-    <!-- Add your CSS and JavaScript files here -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap and other libraries from CDNs -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <!-- Custom CSS with Django static tag -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <title>Earn</title>
+
 </head>
 <body>
     <header>
-        <!-- Add your header content here -->
+        <div class="row no-gutters">
+            <a class="col-md-4 logo" href="{% url 'index' %}"><!-- Placeholder for logo --></a>
+            <div class="col-md-8 bg-color-name-title rounded-corners">
+                <div class="row no-gutters">
+                    <div class="col heading">
+                        <h1 class="name">Earn</h1>
+                        <h2 class="title">Make money on the Internet</h2>
+                    </div>
+                </div>
+                <nav class="row no-gutters">
+                    <div class="col">
+                        <ul id="nav" class="list-inline menucontainer">
+                            <!-- Update these links to use the Django url template tag -->
+                            <li class="list-inline-item menuitem"><a href="{% url 'index' %}">Home</a></li>
+                            <li class="list-inline-item menuitem"><a href="{% url 'forum' %}">Forum</a></li>
+                            <li class="list-inline-item menuitem"><a href="{% url 'login' %}">Login</a></li>
+                            <li class="list-inline-item menuitem"><a href="{% url 'register' %}">Register</a></li>
+                            <li class="list-inline-item menuitem"><a href="{% url 'archive' %}">Archive</a></li>
+                            <li class="list-inline-item menuitem"><a href="{% url 'about_us' %}">About Us</a></li>
+                            <li class="list-inline-item menuitem"><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
     </header>
-
     <main>
         {% block content %}
-        <!-- This is the adjustable main section -->
-        {% endblock %}
+        <!-- Main content will be inserted here by other templates -->
+        {% endblock content %}
     </main>
-
-    <footer>
-        <!-- Add your footer content here -->
+    <footer class="container-fluid">
+        <!-- Footer content -->
+        <div id="footer-details" class="row">
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">About</h5>
+                <p><a href="{% url 'about_us' %}">About Us</a></p>
+            </div>
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">Contact</h5>
+                <p><a href="{% url 'contact' %}">Contact</a></p>
+            </div>
+            <div class="col-sm-4">
+                <h5 class="uppercase general-sub">Social</h5>
+                <!-- Social media links -->
+            </div>
+        </div>
     </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </body>
 </html>
