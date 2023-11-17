@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+# FILEPATH: /c:/Users/pirre/OneDrive/Skrivbord/Repos/earn3/django_project/earn_project/models.py
+
+from django.db import models
+from django.contrib.auth.models import User
+
+class DiscussionTopic(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class Comment(models.Model):
+    content = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    topic = models.ForeignKey(DiscussionTopic, on_delete=models.CASCADE)
+</div>
+{% endblock content %}

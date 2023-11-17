@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Contact Us</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <!-- FILEPATH: /c:/Users/pirre/OneDrive/Skrivbord/Repos/earn3/django_project/earn_project/templates/contact.html -->
+            <!-- BEGIN: ed8c6549bwf9 -->
+            <select class="form-control" id="country" name="country" required>
+                {% load humanize %}
+
+                <option value="">Select Country</option>
+                {% with countries = [
+                    "USA", "Canada", "UK", "Germany", "France", "Australia", "Brazil", "China", "India", "Japan",
+                    "Mexico", "Russia", "South Africa", "Spain", "Italy", "Netherlands", "Sweden", "Switzerland",
+                    "Argentina", "Chile", "Colombia", "Egypt", "Greece", "Ireland", "New Zealand", "Singapore", "Thailand",
+                    "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland",
+                    "Hungary", "Iceland", "Latvia", "Lithuania", "Luxembourg", "Malta", "Norway", "Poland", "Portugal",
+                    "Romania", "Slovakia", "Slovenia", "Turkey", "Ukraine", "Vatican City"
+                    ]|dictsort %}
+                    {% for country in countries %}
+                        <option value="{{ country }}">{{ country }}</option>
+                    {% endfor %}
+                {% endwith %}
+            </select>
+            <!-- END: ed8c6549bwf9 -->
+{% endblock content %}
