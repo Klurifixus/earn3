@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.urls import path
 from core.views import home
+from core import views
+from forum.views import forum
+from forum import views
+from accounts import views
+from django.contrib.auth.views import LoginView
  
 
 urlpatterns = [
     path('', home, name='home'),
+    path('forum/', views.forum, name='forum'),
+    path('login/', LoginView.as_view(), name='login'),
 ]

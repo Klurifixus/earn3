@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def forum(request):
+    # Your view logic here
+    return render(request, 'forum/forum.html', context)
