@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.contrib import admin
+from django.urls import path, include
+from django.views import View
 
-# Create your views here.
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('articles/', include('urls')), 
+]

@@ -29,4 +29,7 @@ urlpatterns = [
     path('forum/', views.forum, name='forum'),
     path('login/', LoginView.as_view(), name='login'),
     path('register/', views.register, name='register'),
+    path('archive/', LoginView.as_view(), name='archive'),
+    path('about/', LoginView.as_view(), name='about'),
+    path('contact/', LoginView.as_view(), name='contact'),
 ]
