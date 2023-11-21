@@ -21,10 +21,12 @@ from forum.views import forum
 from forum import views
 from accounts import views
 from django.contrib.auth.views import LoginView
+
  
 
 urlpatterns = [
     path('', home, name='home'),
     path('forum/', views.forum, name='forum'),
     path('login/', LoginView.as_view(), name='login'),
+    path('register/', views.register, name='register'),
 ]
