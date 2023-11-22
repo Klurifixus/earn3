@@ -2,11 +2,41 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 
-
 {% block content %}
 <div class="container">
     <h1>Welcome to Earn's Home Page</h1>
     <p>This is the main area where your home page content will go.</p>
     
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'images/affiliatemarketing.png' %}" alt="Your Image" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h2>Exploring the World of Affiliate Marketing</h2>
+            <p>
+                Affiliate marketing, often regarded as one of the most accessible and lucrative online business models, has rapidly gained popularity in the digital landscape. It's a dynamic and versatile strategy where businesses reward affiliates (publishers or marketers) for promoting their products or services. In this comprehensive guide, we will delve into the world of affiliate marketing, exploring its diverse applications across various industries, and uncovering the pros and cons that come with it.
+            </p>
+    
+            <h3>Understanding Affiliate Marketing</h3>
+            <p>
+                Affiliate marketing operates on a simple premise: affiliates promote products or services on behalf of a business. They earn a commission for each successful sale, lead, or action generated through their marketing efforts. The appeal of affiliate marketing lies in its flexibility, making it accessible to a wide range of individuals and businesses. Let's explore how affiliate marketing is seamlessly integrated into different industries.
+            </p>
+    
+            <h3>Affiliate Marketing in E-commerce</h3>
+    
+            <h4>Pros:</h4>
+            <ul>
+                <li>High Conversion Rates: E-commerce is known for its high conversion rates. When users are already shopping online, they are more likely to make purchases through affiliate links.</li>
+                <li>Diverse Product Offerings: E-commerce platforms often offer a vast range of products, allowing affiliates to select items that resonate with their audience.</li>
+                <li>Large Customer Base: E-commerce giants like Amazon have massive customer bases, providing affiliates with a broad target audience.</li>
+            </ul>
+    
+            <h4>Cons:</h4>
+            <ul>
+                <li>Competitive: The e-commerce affiliate space is highly competitive. Affiliates may face challenges standing out in a crowded marketplace.</li>
+                <li>Varying Commission Rates: Commissions can vary significantly depending on the product category, with lower rates for certain products.</li>
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock content %}
